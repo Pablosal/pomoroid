@@ -12,6 +12,7 @@ import MainContent from './components.tsx/main_content/MainContent';
 import { taskContext } from './context/contexts/task_context';
 import { Task } from './utils/types';
 import { NewTask } from './utils/classes/Task';
+import Timer from './components.tsx/Timer';
 
 function App() {
   const { taskState, createTask, setActiveTask, toggleTask } =
@@ -43,6 +44,9 @@ function App() {
   //     clearInterval(interval);
   //   };
   // }, [isActive, isPaused]);
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 600); // 10 minutes timer
+
   return (
     <div className="App">
       <Topbar />
@@ -115,7 +119,7 @@ function App() {
         </Panel>
       </div>
       <button onClick={() => createTask(2)}>Start</button>
-      {/* <StopWatch/> */}
+      {/* {/* <StopWatch/> */}
     </div>
   );
 }
