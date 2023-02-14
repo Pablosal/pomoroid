@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "docker:build": "docker build -t pomoroid:simple . ",
+    "docker:run": "docker run -p 127.0.0.1:5173:5173 -d --rm --name pomoroid-app pomoroid:simple",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
